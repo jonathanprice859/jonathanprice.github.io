@@ -1,0 +1,10 @@
+# Old duplicate files (HTML versions are canonical)
+about.md
+projects.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
