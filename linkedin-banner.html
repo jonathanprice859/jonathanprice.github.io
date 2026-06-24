@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LinkedIn Banner</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse 70% 90% at 85% 40%, rgba(56, 189, 248, 0.14), transparent 65%),
+        radial-gradient(ellipse 50% 70% at 20% 80%, rgba(52, 211, 153, 0.1), transparent 60%),
+        linear-gradient(135deg, #050b14 0%, #07111d 45%, #08121f 100%);
+      position: relative;
+    }
+
+    .circuit {
+      position: absolute;
+      inset: 0;
+      opacity: 0.55;
+      background-image: url("circuit-bg.svg");
+      background-size: 180px 180px;
+      mask-image: linear-gradient(90deg, black 10%, black 55%, transparent 95%);
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.25;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      right: 120px;
+      top: -80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.18), transparent 68%);
+      filter: blur(8px);
+    }
+
+    .content {
+      position: absolute;
+      right: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: right;
+      max-width: 920px;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      background: rgba(52, 211, 153, 0.08);
+      color: #a7f3d0;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.15);
+    }
+
+    h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #eef4fc;
+      margin-bottom: 14px;
+    }
+
+    h1 .accent {
+      background: linear-gradient(120deg, #fff 0%, #7dd3fc 45%, #34d399 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sub {
+      font-size: 20px;
+      font-weight: 600;
+      color: #9eb2c8;
+      letter-spacing: 0.02em;
+    }
+
+    .sub span {
+      color: #38bdf8;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 17px;
+    }
+
+    .chip {
+      position: absolute;
+      left: 520px;
+      top: 48px;
+      width: 88px;
+      height: 56px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 8px;
+      background: rgba(10, 18, 32, 0.6);
+    }
+
+    .chip::before,
+    .chip::after {
+      content: "";
+      position: absolute;
+      background: rgba(52, 211, 153, 0.35);
+      border-radius: 2px;
+    }
+
+    .chip::before { width: 8px; height: 8px; left: 12px; top: 14px; box-shadow: 28px 0 0 rgba(56,189,248,0.3), 56px 0 0 rgba(52,211,153,0.3); }
+    .chip::after { width: 48px; height: 2px; left: 12px; top: 34px; background: rgba(56,189,248,0.25); }
+  </style>
+</head>
+<body>
+  <div class="circuit"></div>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="chip" aria-hidden="true"></div>
+
+  <div class="content">
+    <div class="eyebrow"><span class="dot"></span> Status: Online</div>
+    <h1>Access Granted.<br /><span class="accent">Coffee Required.</span></h1>
+    <p class="sub">IT Systems Support • Identity, Endpoint &amp; Software • <span>PowerShell.exe</span></p>
+  </div>
+</body>
+</html>
